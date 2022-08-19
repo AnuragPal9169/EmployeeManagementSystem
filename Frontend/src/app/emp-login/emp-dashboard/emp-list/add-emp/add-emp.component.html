@@ -1,0 +1,102 @@
+<div>
+    <button routerLink="/emplogin/edash/emplist" id="emplist" class="btn btn-success">Back</button>
+    <router-outlet></router-outlet>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Add Employee</h2>
+                <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Employee Name:</label>
+                        <input type="text" placeholder="Name" [(ngModel)]="employee.ename" id="ename"
+                            formControlName="ename" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['ename'].errors}">
+
+                        <div *ngIf="submitted && f['ename'].errors" class="invalid-feedback">
+                            <div *ngIf="f['ename'].errors['required']" style="color: red;">
+                                Employee Name Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Employee Age:</label>
+                        <input type="text" placeholder="Age" [(ngModel)]="employee.eage" id="eage"
+                            formControlName="eage" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['eage'].errors}">
+
+                        <div *ngIf="submitted && f['eage'].errors" class="invalid-feedback">
+                            <div *ngIf="f['eage'].errors['required']" style="color: red;">
+                                Employee Age Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Employee State:</label>
+                        <input type="text" placeholder="State" [(ngModel)]="employee.estate" id="estate"
+                            formControlName="estate" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['estate'].errors}">
+
+                        <div *ngIf="submitted && f['estate'].errors" class="invalid-feedback">
+                            <div *ngIf="f['estate'].errors['required']" style="color: red;">
+                                Employee State Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Employee Username:</label>
+                        <input type="text" placeholder="Username" [(ngModel)]="employee.eusername" id="eusername"
+                            formControlName="eusername" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['eusername'].errors}">
+
+                        <div *ngIf="submitted && f['eusername'].errors" class="invalid-feedback">
+                            <div *ngIf="f['eusername'].errors['required']" style="color: red;">
+                                Employee Username Required!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Employee Password:</label>
+                        <input type="text" placeholder="Password" [(ngModel)]="employee.epassword" id="epassword"
+                            formControlName="epassword" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['epassword'].errors}">
+
+                        <div *ngIf="submitted && f['epassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['epassword'].errors['required']" style="color: red;">
+                                Employee Password Required!
+                            </div>
+                        </div>
+                        <div *ngIf="submitted && f['epassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['epassword'].errors['pattern']" style="color: red;">
+                                Employee Password doesn't match Pattern! Must contain 8 or more characters, 1 lowercase,
+                                1 uppercase, 1 number and 1 special character!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Employee Email:</label>
+                        <input type="text" placeholder="Email" [(ngModel)]="employee.eemail" id="eemail"
+                            formControlName="eemail" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['eemail'].errors}">
+
+                        <div *ngIf="submitted && f['eemail'].errors" class="invalid-feedback">
+                            <div *ngIf="f['eemail'].errors['required']" style="color: red;">
+                                Employee Email Required!
+                            </div>
+                        </div>
+                        <div *ngIf="submitted && f['eemail'].errors" class="invalid-feedback">
+                            <div *ngIf="f['eemail'].errors['pattern']" style="color: red;">
+                                Please enter valid Employee Email!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="editstudent">Add Employee</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

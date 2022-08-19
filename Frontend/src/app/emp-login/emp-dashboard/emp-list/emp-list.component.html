@@ -1,0 +1,41 @@
+<h1 style="background-color: greenyellow; text-align: center; font-family: Georgia, 
+'Times New Roman', Times, serif;">List of Employees</h1>
+
+<div style="text-align: center;">
+    <table class="table table-dark table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Age</th>
+                <th>Employee State</th>
+                <th>Employee Username</th>
+                <th>Employee Password</th>
+                <th>Employee Email</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let e of emps" class="container-fluid">
+            <tr>
+                <td>{{e.eid}}</td>
+                <td>{{e.ename}}</td>
+                <td>{{e.eage}}</td>
+                <td>{{e.estate}}</td>
+                <td>{{e.eusername}}</td>
+                <td>{{e.epassword}}</td>
+                <td>{{e.eemail}}</td>
+                <td><button id="editemp" class="btn btn-warning" (click)="editEmpDetails(e)">Edit</button></td>
+                <td><button id="deleteemp" class="btn btn-warning" (click)="delEmpDetails(e)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <button routerLink="addemp" id="addemp" class="btn btn-warning mr-1">Add Employee</button>
+    <router-outlet></router-outlet>
+</div>
+<br>
+<div
+    style="text-align: center; font-size: large; background-color: yellowgreen; font-family: Georgia, 'Times New Roman', Times, serif;">
+    <a routerLink="/emplogin/edash">Click here to go back to dashboard</a>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,48 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Employee Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Enter Username:</label>
+                        <input type="text" placeholder="Username" [(ngModel)]="employee.eusername" id="eusername"
+                            formControlName="eusername" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['eusername'].errors}">
+
+                        <div *ngIf="submitted && f['eusername'].errors" class="invalid-feedback">
+                            <div *ngIf="f['eusername'].errors['required']" style="color: red;">
+                                Username Required!
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Enter Password:</label>
+                        <input type="password" placeholder="Password" [(ngModel)]="employee.epassword" id="epassword"
+                            formControlName="epassword" class="form-control"
+                            [ngClass]="{'is-invalid':submitted && f['epassword'].errors}">
+
+                        <div *ngIf="submitted && f['epassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['epassword'].errors['required']" style="color: red;">
+                                Password Required!
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="lbutton">Login</button>
+                    </div>
+                    <h6
+                        style="background-color: whitesmoke; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">
+                        (Click twice to Login)</h6>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div *ngIf="a===false;">
+    <h2 style="background-color: burlywood; text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">
+        Invalid Credentials, please try again </h2>
+</div>-->
